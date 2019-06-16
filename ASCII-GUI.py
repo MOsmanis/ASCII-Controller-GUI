@@ -32,6 +32,7 @@ class CursesController():
         curses.cbreak()
         self.stdscr.nodelay(1)
         self.stdscr.keypad(1)
+        curses.curs_set(False)
         #Create Pad with button names
         #CHANGE THE HEIGHT (5)
         names_template = ""
@@ -96,7 +97,7 @@ def menu():
     config = DesignConfig(font='cyberlarge')
     curses_controller = CursesController(config=config, button_names=button_names)
     curses_controller.initCurses()
-         
+
     while 1:
 
         events = get_gamepad()
